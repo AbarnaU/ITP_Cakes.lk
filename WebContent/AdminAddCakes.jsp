@@ -9,6 +9,7 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/admin/bootstrap.min.css" rel="stylesheet">
     <link href="css/admin/cakes_lk_admin.css" rel="stylesheet">
+    <script type="text/javascript" src="js/admin-add_cakes.js"></script>  
     
   </head>
   <body>  
@@ -44,7 +45,7 @@
         <div class="cakes-content-container">
           <div class="cakes-content-widget white-bg">
             <h2 class="margin-bottom-10 text-center">Add Cakes</h2>
-            <form action="AdminAddCakes" name="add-package" class="cakes-login-form" method="POST">
+            <form action="AdminAddCakes" name="add-cake" class="cakes-login-form" method="POST">
               <div class="row form-group">
                 <div class="col-lg-6 col-md-6 form-group">                  
                     <label>Cake Id</label>
@@ -99,7 +100,7 @@
               </div>
 
               <div class="form-group text-center">
-                <button type="submit"class="cakes-blue-button">Add</button>
+                <button type="submit"class="cakes-blue-button" onclick="return validate()">Add</button>
               </div>   
             </form>                            
           </div>

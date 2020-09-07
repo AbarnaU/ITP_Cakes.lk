@@ -1,23 +1,22 @@
 function validate(){
 	
-	 var eid = document.forms["add-guide"][ "eid"].value;
-	 var ename = document.forms["add-guide"][ "ename"].value;
-	 var phone = document.forms["add-guide"][ "phone"].value;
-	 var salary = document.forms["add-guide"][ "salary"].value;
-	 var address = document.forms["add-guide"][ "address"].value;
+	 var cid = document.forms["add-cake"][ "cid"].value;
+	 var cname = document.forms["add-cake"][ "cname"].value;
+	 var qty = document.forms["add-cake"][ "qty"].value;
+	 var price = document.forms["add-cake"][ "price"].value;
+	 var description = document.forms["add-cake"][ "description"].value;
 
 
-
-	if(is_eid(eid))
-	    if(isAlphebatic(ename))
-	    	if(is_phone(phone))
-	    		if(is_salary(salary))
-	    			if(is_address(address))
-	    				return true;
+	if(is_cid(cid))
+	    if(isAlphebatic(cname))
+	    	if(is_qty(qty))
+				if(is_price(price))
+					if(is_description(description))
+    					return true;
 				    else
-				    	return false;
+				   		return false;
 					else
-				        return false;
+			        	return false;
 					else
 						return false;
 					else
@@ -37,8 +36,8 @@ function isEmpty(elemValue,field){
 }
 
 
-function is_eid(elemValue){
-    if(!isEmpty(elemValue, "Tour Guide ID"))
+function is_cid(elemValue){
+    if(!isEmpty(elemValue, "Cake ID"))
             return true; 
     else
         return false;
@@ -46,7 +45,7 @@ function is_eid(elemValue){
 
 function isAlphebatic(elemValue){
     var exp = /^[a-zA-Z]+$/;
-    if(!isEmpty(elemValue, "Tour Guide Name"))
+    if(!isEmpty(elemValue, "Cake Name"))
     {
         if(elemValue.match(exp))
         {
@@ -54,7 +53,7 @@ function isAlphebatic(elemValue){
         }
         else
         {
-            alert("Enter only text for you Tour Guide Name");
+            alert("Enter only text for cake Name");
             return false;
         }
     }
@@ -62,23 +61,23 @@ function isAlphebatic(elemValue){
         return false;
 }
 
-function is_phone(elemValue){
-	 if(!isEmpty(elemValue, "Phone"))
+function is_qty(elemValue){
+	 if(!isEmpty(elemValue, "Quantity"))
+        return true; 
+else
+    return false;
+}
+
+function is_price(elemValue){
+	 if(!isEmpty(elemValue, "Price"))
          return true; 
  else
      return false;
 }
 
-function is_salary(elemValue){
-    if(!isEmpty(elemValue, "Salary"))
+function is_description(elemValue){
+    if(!isEmpty(elemValue, "Description"))
             return true; 
     else
         return false;
-}
-
-function is_address(elemValue){
-	 if(!isEmpty(elemValue, "Address"))
-        return true; 
-else
-    return false;
 }
