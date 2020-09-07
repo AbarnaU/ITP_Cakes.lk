@@ -1,8 +1,10 @@
 package Service;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import Connection.DbConnection;
+
 import Entities.Login;
 
 public class LoginService {
@@ -13,6 +15,8 @@ public class LoginService {
 			Statement st = con.createStatement();
 			ResultSet result = st.executeQuery("SELECT uname,pass FROM user WHERE uname='"+log.getUsername()+"' AND pass='"+log.getPassword()+"'");
 			
+			
+
 			if(result.next()) {
 	 			return true;
 	 		}else {
@@ -23,8 +27,7 @@ public class LoginService {
 		catch(Exception e){
 			System.out.println(e);
 		} 
-		
-		
 		return false;
 	}
 }
+

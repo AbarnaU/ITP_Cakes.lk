@@ -1,7 +1,7 @@
 package Entities;
 
 public class Login {
-
+	
 	String username;
 	String password;
 	
@@ -11,7 +11,6 @@ public class Login {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	
 	public String getPassword() {
 		return password;
 	}
@@ -19,4 +18,6 @@ public class Login {
 		this.password = password;
 	}
 	
+	
+
 }

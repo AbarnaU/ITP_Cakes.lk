@@ -10,7 +10,7 @@ public class DbConnection {
 		
 		try{  
 			String driver ="com.mysql.jdbc.Driver";
-			String url = "jdbc:mysql://localhost:3308/cakes.lk"; 
+			String url = "jdbc:mysql://localhost:3306/cakes.lk"; 
 			String username = "root"; 
 			String password = "";
 			  
