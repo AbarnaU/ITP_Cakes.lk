@@ -19,14 +19,14 @@
     <div class="cakes-flex-row">
       <div class="cakes-sidebar">
         <header class="cakes-site-header">
-          <h1>Dream Destination</h1>
+          <h1>Cakes.Lk</h1>
         </header>    
         <br>
         <nav class="cakes-left-nav">          
           <ul>
             <li><a href=""><i class="fa fa-users fa-fw"></i>Customers</a></li>
             <li><a href=""><i class="fa fa-users fa-fw"></i>Employee</a></li>
-            <li><a href=""><i class="fa fa-users fa-fw"></i>Supplier</a></li>
+            <li><a href="AdminViewSupplier.jsp"><i class="fa fa-users fa-fw"></i>Supplier</a></li>
             <li><a href=""><i class="fa fa-sliders fa-fw"></i>Products</a></li>
             <li><a href="AdminViewCakes.jsp" class="active"><i class="fa fa-sliders fa-fw"></i>Cakes</a></li>
             <li><a href=""><i class="fa fa-sliders fa-fw"></i>Designing Cakes</a></li>

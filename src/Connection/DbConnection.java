@@ -12,7 +12,7 @@ public class DbConnection {
 			String driver ="com.mysql.jdbc.Driver";
 			String url = "jdbc:mysql://localhost:3306/cakes.lk"; 
 			String username = "root"; 
-			String password = "";
+			String password = "admin";
 			  
 			if(con == null || con.isClosed())
 			{
