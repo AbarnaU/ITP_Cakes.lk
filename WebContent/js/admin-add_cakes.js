@@ -8,7 +8,6 @@ function validate(){
 
 
 	if(is_cid(cid))
-	    if(isAlphebatic(cname))
 	    	if(is_qty(qty))
 				if(is_price(price))
 					if(is_description(description))
@@ -17,8 +16,6 @@ function validate(){
 				   		return false;
 					else
 			        	return false;
-					else
-						return false;
 					else
 						return false;
 					else
@@ -39,24 +36,6 @@ function isEmpty(elemValue,field){
 function is_cid(elemValue){
     if(!isEmpty(elemValue, "Cake ID"))
             return true; 
-    else
-        return false;
-}
-
-function isAlphebatic(elemValue){
-    var exp = /^[a-zA-Z]+$/;
-    if(!isEmpty(elemValue, "Cake Name"))
-    {
-        if(elemValue.match(exp))
-        {
-            return true;
-        }
-        else
-        {
-            alert("Enter only text for cake Name");
-            return false;
-        }
-    }
     else
         return false;
 }
