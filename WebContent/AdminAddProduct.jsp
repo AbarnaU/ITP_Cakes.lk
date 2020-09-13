@@ -9,7 +9,7 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/admin/bootstrap.min.css" rel="stylesheet">
     <link href="css/admin/cakes_lk_admin.css" rel="stylesheet">
-    <script type="text/javascript" src="js/admin-add_cakes.js"></script>  
+  
     
   </head>
   <body>  
@@ -24,64 +24,64 @@
           <ul>
             <li><a href=""><i class="fa fa-users fa-fw"></i>Customers</a></li>
             <li><a href=""><i class="fa fa-users fa-fw"></i>Employee</a></li>
-            <li><a href="AdminViewSupplier.jsp"  class="active"><i class="fa fa-users fa-fw"></i>Supplier</a></li>
-            <li><a href="AdminViewProduct.jsp"><i class="fa fa-sliders fa-fw"></i>Products</a></li>
-            <li><a href="AdminViewCakes.jsp"><i class="fa fa-sliders fa-fw"></i>Cakes</a></li>
+            <li><a href="AdminViewSupplier.jsp"><i class="fa fa-users fa-fw"></i>Supplier</a></li>
+            <li><a href="AdminViewProduct.jsp"class="active"><i class="fa fa-sliders fa-fw"></i>Products</a></li>
+            <li><a href="AdminViewCakes.jsp" ><i class="fa fa-sliders fa-fw"></i>Cakes</a></li>
             <li><a href=""><i class="fa fa-sliders fa-fw"></i>Designing Cakes</a></li>
             <li><a href="AdminViewCustomerOrderedCake.jsp"><i class="fa fa-sliders fa-fw"></i>Cake Orders</a></li>
             <li><a href=""><i class="fa fa-sliders fa-fw"></i>Account</a></li>
             <li><a href=""><i class="fa fa-sliders fa-fw"></i>Delivery</a></li>
             <li><a href=""><i class="fa fa-sliders fa-fw"></i>Payment</a></li>
             <li><a href=""><i class="fa fa-sliders fa-fw"></i>Feedback</a></li>          
-            <li style="padding: 20px 47px;"  class="login"><form action="Logout" class="logout" method="post">
+             <li style="padding: 20px 47px;"  class="login"><form action="Logout" class="logout" method="post">
 							 <button  class="cakes-blue-button" >Logout</button>
    						</form> </li>
           </ul>  
-        </nav>
+   </nav>
       </div>
-      
       <!-- Main content --> 
-          <div class="cakes-content col-1 light-gray-bg"> 
+         <div class="cakes-content col-1 light-gray-bg"> 
         <div class="cakes-content-container">
           <div class="cakes-content-widget white-bg">
-            <h2 class="margin-bottom-10 text-center">Add Supplier</h2>
-            <form action="AdminAddSupplier" name="add-supplier" class="cakes-login-form" method="POST">
+            <h2 class="margin-bottom-10 text-center">Add Cake Product</h2>
+            <form action="AdminAddProduct" name="add-cake" class="cakes-login-form" method="POST">
               <div class="row form-group">
                 <div class="col-lg-6 col-md-6 form-group">                  
-                    <label>Supplier Id</label>
-                    <input type="text" class="form-control" id="supId" name="supId"  placeholder="supId">                  
+                    <label>Product Id</label>
+                    <input type="text" class="form-control" id="PId" name="PId"  placeholder="Product ID">                  
                 </div>
                 <div class="col-lg-6 col-md-6 form-group">                  
-                    <label>Supplier Name</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="name">                  
+                    <label>Product Name</label>
+                    <input type="text" class="form-control" id="PName"name="PName" placeholder="Product Name">                  
                 </div> 
-     
-               
+              </div>
+           
+              <div class="row form-group">
               	<div class="col-lg-6 col-md-6 form-group">                                  
-                    <label>Location</label>
-                    <input type="text" class="form-control" id="location" name="location" placeholder="location">   
+                    <label>Quantity (kg)</label>
+                    <input type="text" class="form-control" id="Quantity" name="Quantity" placeholder="Quantity">   
                 </div>
               	 <div class="col-lg-6 col-md-6 form-group">                  
-                    <label>Email Address</label>
-                    <input type="text" class="form-control" id="email" name="email"  placeholder="email">                  
+                    <label>Price (per kg)</label>
+                    <input type="text" class="form-control" id="Price" name="Price"  placeholder="Price">                  
                 </div> 
-                 <div class="col-lg-6 col-md-6 form-group">                  
-                    <label>Phone Number</label>
-                    <input type="text" class="form-control" id="phone" name="phone"  placeholder="phone">                  
-                </div> 
-                
-                 <div class="col-lg-6 col-md-6 form-group">                  
-                    <label>Delivery</label>
-                    <input type="text" class="form-control" id="delivery" name="delivery"  placeholder="delivery">                  
-                </div> 
-                
               </div>
-              
-               </div>
-            
+                <div class="col-lg-6 col-md-6 form-group">                  
+                    <label >Description</label>
+                    <textarea id="Description" class="form-control"  name="Description" rows="2" ></textarea>                   
+                </div>  
+                <div class="row form-group">
+                <div class="col-lg-6 col-md-6 form-group">                  
+                    <label>Supplier Id</label>
+                    <input type="text" class="form-control" id="supId" name="supId"  placeholder="Supplier ID">                  
+                </div>
+              </div>
+               
+              </div>
+
               <div class="form-group text-center">
-                <button type="submit"class="cakes-blue-button" onclick="return validate()">Add</button>
-              </div>   
+                <button type="submit"class="cakes-blue-button" >Add</button>
+            </div>   
             </form>                            
           </div>
         </div>
