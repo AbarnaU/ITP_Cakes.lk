@@ -32,7 +32,7 @@
 							<ul class="navbar-nav justify-content-end">
 								<li><a href="Home.jsp">Home</a></li>
 								<li><a href="H_Cakes.jsp">Cakes</a></li>
-								<li><a href="#">Customize Cakes</a></li>
+								<li><a href="CustomizeCakeView.jsp">Customize Cakes</a></li>
 								<li><a href="#">My Profile</a></li>
 								<li class="active"><a href="CustomerViewCakeOrder.jsp">My Orders</a></li>
 								<li><a href="">Feedback</a></li>
@@ -70,7 +70,17 @@
                	    	<div class="single_b_title">
                	    		<h2>Order Cake</h2>
                	    	</div>
+               	    	<script>
+							function setValue() {
+								document.getElementById("odate").valueAsDate = new Date();
+								document.getElementById('address').value = 'Batticaloa';
+							}
+						</script>
                	   
+               	   		<div class="text-center">
+        					<button type="submit" class="btn pest_btn2" onclick="setValue()" >Demo</button>
+						</div>
+		
                 		<div class="billing_form_area">
                 			<form class="billing_form row justify-content-center" action="CustomerOrderCake" method="post">
                 				<%

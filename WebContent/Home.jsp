@@ -32,7 +32,7 @@
 							<ul class="navbar-nav justify-content-end">
 								<li class="active"><a href="Home.jsp">Home</a></li>
 								<li><a href="H_Cakes.jsp">Cakes</a></li>
-								<li><a href="#">Customize Cakes</a></li>
+								<li><a href="CustomizeCakeView.jsp">Customize Cakes</a></li>
 								<li><a href="#">My Profile</a></li>
 								<li><a href="CustomerViewCakeOrder.jsp">My Orders</a></li>
 								<li><a href="">Feedback</a></li>

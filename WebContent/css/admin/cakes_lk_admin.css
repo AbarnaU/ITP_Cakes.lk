@@ -361,6 +361,7 @@ footer { padding: 15px; }
 .cakes-blue-button {
 	background-color: #39ADB4;
 	border: none;	
+	outline: none;
 	color: white;	
 }
 .cakes-blue-button:hover {	background-color: #2A858B; }

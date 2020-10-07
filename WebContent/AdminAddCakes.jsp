@@ -43,8 +43,25 @@
       <!-- Main content --> 
           <div class="cakes-content col-1 light-gray-bg"> 
         <div class="cakes-content-container">
+        	<div class="text-center">
+        		<button type="submit" class="cakes-blue-button" onclick="setValue()" >Demo</button>
+			</div>
+		
           <div class="cakes-content-widget white-bg">
             <h2 class="margin-bottom-10 text-center">Add Cakes</h2>
+            
+            <script>
+				function setValue() {
+					document.getElementById("cid").value = 'C008';
+					document.getElementById('cname').value = 'Choco Mint';
+					document.getElementById('flavour').value = 'Strawberry';
+					document.getElementById('shape').value = 'Heart';
+					document.getElementById('qty').value = '3';
+					document.getElementById('price').value = '4000.00';
+					document.getElementById('description').value = 'Birthday Special';
+				}
+			</script>
+		
             <form action="AdminAddCakes" name="add-cake" class="cakes-login-form" method="POST">
               <div class="row form-group">
                 <div class="col-lg-6 col-md-6 form-group">                  

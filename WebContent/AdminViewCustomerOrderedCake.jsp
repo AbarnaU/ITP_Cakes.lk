@@ -45,6 +45,12 @@
       <!-- Main content --> 
         <div class="cakes-content col-1 light-gray-bg"> 
         <div class="cakes-content-container">
+	        <div class="text-center">
+	          <form class="form-inline" action="AdminOrderedCakeSearch" method="post">
+			    <input class="form-control" type="search" id="id" name="id" placeholder="Search" aria-label="Search">
+			    <button class="btn btn-primary" type="submit">Search</button>
+			  </form>
+	        </div>
           <div class="cakes-content-widget no-padding">
             <div class="panel panel-default table-responsive">
               <table class="table table-striped table-bordered tcakes-user-table">
@@ -100,6 +106,10 @@
             
          </div>                          
           </div> 
+          
+          	<div class="form-group text-center">
+	          <button onclick="window.location.href='OrderedCakeReportGenerate.jsp'" class="cakes-blue-button"  >Generate Report</button>
+	        </div> 
         </div>
       </div>
 	    </div>
