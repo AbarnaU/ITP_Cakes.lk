@@ -27,7 +27,7 @@
             <li><a href=""><i class="fa fa-users fa-fw"></i>Customers</a></li>
             <li><a href=""><i class="fa fa-users fa-fw"></i>Employee</a></li>
             <li><a href="AdminViewSupplier.jsp"  class="active"><i class="fa fa-users fa-fw"></i>Supplier</a></li>
-            <li><a href="AdminViewProduct.jsp"><i class="fa fa-sliders fa-fw"></i>Products</a></li>
+            <li><a href=""><i class="fa fa-sliders fa-fw"></i>Products</a></li>
             <li><a href="AdminViewCakes.jsp"><i class="fa fa-sliders fa-fw"></i>Cakes</a></li>
             <li><a href=""><i class="fa fa-sliders fa-fw"></i>Designing Cakes</a></li>
             <li><a href="AdminViewCustomerOrderedCake.jsp"><i class="fa fa-sliders fa-fw"></i>Cake Orders</a></li>
@@ -46,23 +46,23 @@
           <div class="cakes-content col-1 light-gray-bg"> 
         <div class="cakes-content-container">
           <div class="cakes-content-widget white-bg">
-            <h2 class="margin-bottom-10 text-center">Edit Supplier-Ingredient</h2>
+            <h2 class="margin-bottom-10 text-center">Edit Supplier-Tool</h2>
             
               <%
 
 				try{
 						Connection con = DbConnection.getDBConnection(); 
 		 		        Statement myStm= con.createStatement();
-		 		       	String query  ="SELECT * FROM supplier_table WHERE supId='"+id+"'";
+		 		       	String query  ="SELECT * FROM suppliertool_table WHERE supId='"+id+"'";
 	
 	    				ResultSet  resultSet = myStm.executeQuery(query);
 	    
 	      			while(resultSet.next()){
     	      	  
 			%>
-            <form action="AdminEditSupplier" name="add-package" class="cakes-login-form" method="POST">
+            <form action="AdminEditSupplierTool" name="add-package" class="cakes-login-form" method="POST">
               <div class="row form-group">
-                <div class="col-lg-6 col-md-6 form-group">                  
+                 <div class="col-lg-6 col-md-6 form-group">                  
                     <label>Supplier Id</label>
                     <input type="text" class="form-control" id="supId" name="supId"  placeholder="supId" value="<%=resultSet.getString("supId")%>" readonly> 
                     
@@ -77,7 +77,7 @@
                     <input type="text" class="form-control" id="location"name="location" value="<%=resultSet.getString("location")%>">                  
                 </div> 
                                <div class="col-lg-6 col-md-6 form-group">                  
-                    <label>Supplier Email</label>
+                    <label>Tool Supplier Email</label>
                     <input type="email" class="form-control" id="email"name="email" value="<%=resultSet.getString("email")%>" required/> 
 						<div class="invalid-feedback">
             Please provide a valid email example@....
@@ -87,11 +87,17 @@
               	<div class="col-lg-6 col-md-6 form-group">                                  
                     <label>phone</label>
                     <input type="text" class="form-control" id="phone" name="phone" value="<%=resultSet.getString("phone")%>" required/>   
-                         
+                    <div class="invalid-feedback">
+            please provide valid phone number-0121234567
+        </div>               
                 </div>
               	 <div class="col-lg-6 col-md-6 form-group">                  
                     <label>Delivery</label>
                     <input type="text" class="form-control" id="delivery" name="delivery" value="<%=resultSet.getString("delivery")%>">                  
+                </div>
+                <div class="col-lg-6 col-md-6 form-group">                  
+                    <label>Minimum Order Quantity </label>
+                    <input type="text" class="form-control" id="minOrderQty" name="minOrderQty" value="<%=resultSet.getString("minOrderQty")%>">                  
                 </div>
                
               </div>
@@ -111,7 +117,7 @@
 				e.printStackTrace();
 			}
 %>                      
-      
+          </div>
         </div>
 	  </div>
   </body>

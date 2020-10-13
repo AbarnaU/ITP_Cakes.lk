@@ -27,7 +27,7 @@
             <li><a href=""><i class="fa fa-users fa-fw"></i>Customers</a></li>
             <li><a href=""><i class="fa fa-users fa-fw"></i>Employee</a></li>
             <li><a href="AdminViewSupplier.jsp"  class="active"><i class="fa fa-users fa-fw"></i>Supplier</a></li>
-            <li><a href="AdminViewProduct.jsp"><i class="fa fa-sliders fa-fw"></i>Products</a></li>
+            <li><a href=""><i class="fa fa-sliders fa-fw"></i>Products</a></li>
             <li><a href="AdminViewCakes.jsp"><i class="fa fa-sliders fa-fw"></i>Cakes</a></li>
             <li><a href=""><i class="fa fa-sliders fa-fw"></i>Designing Cakes</a></li>
             <li><a href="AdminViewCustomerOrderedCake.jsp"><i class="fa fa-sliders fa-fw"></i>Cake Orders</a></li>
@@ -46,7 +46,7 @@
           <div class="cakes-content col-1 light-gray-bg"> 
         <div class="cakes-content-container">
           <div class="cakes-content-widget white-bg">
-            <h2 class="margin-bottom-10 text-center">Edit Supplier-Ingredient</h2>
+            <h2 class="margin-bottom-10 text-center">Order Ingredient</h2>
             
               <%
 
@@ -60,44 +60,51 @@
 	      			while(resultSet.next()){
     	      	  
 			%>
-            <form action="AdminEditSupplier" name="add-package" class="cakes-login-form" method="POST">
+            <form action="AdminOrderSupplier" name="add-package" class="cakes-login-form" method="POST">
               <div class="row form-group">
-                <div class="col-lg-6 col-md-6 form-group">                  
+              <div class="col-lg-6 col-md-6 form-group">                  
+                    <label>Order Id</label>
+                    <input type="text" class="form-control" id="supOrdId" name="supOrdId"  placeholder="Enter supplier Order id"> 
+                    
+                </div>
+                <div class="col-lg-4 col-md-6 form-group">                  
                     <label>Supplier Id</label>
                     <input type="text" class="form-control" id="supId" name="supId"  placeholder="supId" value="<%=resultSet.getString("supId")%>" readonly> 
                     
                 </div>
                 <div class="col-lg-6 col-md-6 form-group">                  
                     <label>Supplier Name</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="name"  value="<%=resultSet.getString("name")%>">  
+                    <input type="text" class="form-control" id="name" name="name" placeholder="name"  value="<%=resultSet.getString("name")%>" readonly>  
                                         
                 </div> 
-                                <div class="col-lg-6 col-md-6 form-group">                  
-                    <label>Location</label>
-                    <input type="text" class="form-control" id="location"name="location" value="<%=resultSet.getString("location")%>">                  
+                
+                 <div class="col-lg-6 col-md-6 form-group">                  
+                    <label>Supplier type</label>
+                    <input type="text" class="form-control" id="supType" name="supType" placeholder="supType"  value="Ingredient" readonly>  
+                                        
                 </div> 
                                <div class="col-lg-6 col-md-6 form-group">                  
-                    <label>Supplier Email</label>
-                    <input type="email" class="form-control" id="email"name="email" value="<%=resultSet.getString("email")%>" required/> 
-						<div class="invalid-feedback">
-            Please provide a valid email example@....
-        </div>                               
+                    <label>Ingredient name</label>
+                     <input type="text" class="form-control" id="ordItm" name="ordItm" placeholder="Ingredient Name"   required/>                                
                 </div> 
              
               	<div class="col-lg-6 col-md-6 form-group">                                  
-                    <label>phone</label>
-                    <input type="text" class="form-control" id="phone" name="phone" value="<%=resultSet.getString("phone")%>" required/>   
+                    <label>Quantity</label>
+                   <input type="number" class="form-control" id="qty" name="qty" placeholder="Quantity"  required/>   
                          
                 </div>
               	 <div class="col-lg-6 col-md-6 form-group">                  
-                    <label>Delivery</label>
-                    <input type="text" class="form-control" id="delivery" name="delivery" value="<%=resultSet.getString("delivery")%>">                  
+                    <label>price</label>
+                   <input type="number" class="form-control" id="price" name="price" placeholder="price LKR"  required/>        
                 </div>
+
+               
                
               </div>
 
               <div class="form-group text-center">
-                <button type="submit"class="cakes-blue-button">Update</button>
+                <button type="submit"class="cakes-blue-button">save</button>
+                 <button type="submit" class="cakes-blue-button" onclick="setValue()" >Demo</button>
               </div>   
             </form>      
                        <% 
@@ -111,7 +118,15 @@
 				e.printStackTrace();
 			}
 %>                      
-      
+          </div>
+            <script>
+				function setValue() {
+					document.getElementById("supOrdId").value = '36';
+					document.getElementById('ordItm').value = 'Strawberry essence';
+					document.getElementById('qty').value = '20';
+					document.getElementById('price').value = '480';
+				}
+			</script>   
         </div>
 	  </div>
   </body>

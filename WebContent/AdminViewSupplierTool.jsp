@@ -27,7 +27,7 @@
             <li><a href=""><i class="fa fa-users fa-fw"></i>Customers</a></li>
             <li><a href=""><i class="fa fa-users fa-fw"></i>Employee</a></li>
             <li><a href="AdminViewSupplier.jsp"  class="active"><i class="fa fa-users fa-fw"></i>Supplier</a></li>
-            <li><a href="AdminViewProduct.jsp"><i class="fa fa-sliders fa-fw"></i>Products</a></li>
+            <li><a href=""><i class="fa fa-sliders fa-fw"></i>Products</a></li>
             <li><a href="AdminViewCakes.jsp"><i class="fa fa-sliders fa-fw"></i>Cakes</a></li>
             <li><a href=""><i class="fa fa-sliders fa-fw"></i>Designing Cakes</a></li>
             <li><a href="AdminViewCustomerOrderedCake.jsp"><i class="fa fa-sliders fa-fw"></i>Cake Orders</a></li>
@@ -43,31 +43,31 @@
       </div>
       
       <!-- Main content --> 
+      
         <div class="cakes-content col-1 light-gray-bg"> 
         <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Supplier management</a>
     </div>
-    <ul class="nav navbar-nav">
+     <ul class="nav navbar-nav">
       <li class="active"><a href="AdminViewSupplier.jsp">Ingredients</a></li>
 
       </ul>
     <ul class="nav navbar-nav">
       <li class="active"><a href="AdminViewSupplierTool.jsp">Tools</a></li>
-
       </ul>
           <ul class="nav navbar-nav">
       <li class="active"><a href="AdminViewSupplierOrder.jsp">Orders</a></li>
 
       </ul>
-  </div></nav>
+  </div>
+</nav>
         <div class="cakes-content-container">
-        
-        	  <div class="btn-group btn-group-justified">
+        	 <div class="btn-group btn-group-justified">
 
     <div class="btn-group  text-left">
-      <button onclick="window.location.href='AdminAddSupplier.jsp'" class="cakes-blue-button"  >Add New Supplier</button>
+      <button onclick="window.location.href='AdminAddSupplierTool.jsp'" class="cakes-blue-button"  >Add New Tool Supplier</button>
     </div>
     <div class="btn-group  text-right">
        <form action="" method="get">
@@ -75,7 +75,6 @@
        </form>
     </div>
   </div>
-	        
           <div class="cakes-content-widget no-padding">
             <div class="panel panel-default table-responsive">
               <table class="table table-striped table-bordered tcakes-user-table">
@@ -86,7 +85,8 @@
                     <td><a href="" class="cakes-sort-by">Location <span class="caret"></span></a></td>
                     <td><a href="" class="cakes-sort-by">Email <span class="caret"></span></a></td>
                     <td><a href="" class="cakes-sort-by">Phone <span class="caret"></span></a></td>
-                    <td><a href="" class="cakes-sort-by">Delivery <span class="caret"></span></a></td>        
+                    <td><a href="" class="cakes-sort-by">Delivery <span class="caret"></span></a></td>       
+                    <td><a href="" class="cakes-sort-by">MinOrderQty <span class="caret"></span></a></td>         
                     <td>Order</td>
                      <td>Edit</td>
                       <td>Delete</td>
@@ -104,12 +104,12 @@
             String data;
             
             if(query!=null){
-            	data = "select * from supplier_table where name like '%"+query+"%' ";
+            	data = "select * from suppliertool_table where name like '%"+query+"%' ";
             }else{
-            	data = "select * from supplier_table";
+            	data = "select * from suppliertool_table";
             }
           
-            res = myStm.executeQuery(data);
+            res = myStm.executeQuery(data);;
                while(res.next()){
 %>
                   <tr>
@@ -119,15 +119,17 @@
                     <td><%=res.getString("location") %></td>
                     <td><%=res.getString("email") %></td>
                     <td><%=res.getString("phone") %></td>
-                    <td><%=res.getString("delivery") %></td>  
-        					
-        	<td>
-              <button onclick="window.location.href='AdminOrderSupplier.jsp?supId=<%=res.getString("supId")%>';" type="button" class="btn btn-primary">Order</button>
-              <td>
-              <button onclick="window.location.href='AdminEditSupplier.jsp?supId=<%=res.getString("supId")%>';" type="button" class="btn btn-success">Edit</button></td>
-              <td>
-            <button  onclick="window.location.href='AdminDeleteSupplier?supId=<%=res.getString("supId")%>';" type="button" class="btn btn-danger">Delete</button>
-            </td>
+                    <td><%=res.getString("delivery") %></td>
+                    <td><%=res.getString("minOrderQty") %></td>    
+                  
+                    <td>
+              			<button onclick="window.location.href='AdminOrderSupplierTool.jsp?supId=<%=res.getString("supId")%>';" type="button" class="btn btn-primary">Order</button>
+              		<td>
+             			<button onclick="window.location.href='AdminEditSupplierTool.jsp?supId=<%=res.getString("supId")%>';" type="button" class="btn btn-success">Edit</button></td>
+              		<td>
+            			<button  onclick="window.location.href='AdminDeleteSupplierTool?supId=<%=res.getString("supId")%>';" type="button" class="btn btn-danger">Delete</button></td>
+            
+                         
         		</tr>
                   <%
             }

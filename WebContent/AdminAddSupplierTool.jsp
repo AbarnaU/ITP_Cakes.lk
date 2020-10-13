@@ -25,7 +25,7 @@
             <li><a href=""><i class="fa fa-users fa-fw"></i>Customers</a></li>
             <li><a href=""><i class="fa fa-users fa-fw"></i>Employee</a></li>
             <li><a href="AdminViewSupplier.jsp"  class="active"><i class="fa fa-users fa-fw"></i>Supplier</a></li>
-            <li><a href="AdminViewProduct.jsp"><i class="fa fa-sliders fa-fw"></i>Products</a></li>
+            <li><a href=""><i class="fa fa-sliders fa-fw"></i>Products</a></li>
             <li><a href="AdminViewCakes.jsp"><i class="fa fa-sliders fa-fw"></i>Cakes</a></li>
             <li><a href=""><i class="fa fa-sliders fa-fw"></i>Designing Cakes</a></li>
             <li><a href="AdminViewCustomerOrderedCake.jsp"><i class="fa fa-sliders fa-fw"></i>Cake Orders</a></li>
@@ -44,18 +44,18 @@
           <div class="cakes-content col-1 light-gray-bg"> 
         <div class="cakes-content-container">
           <div class="cakes-content-widget white-bg">
-            <h2 class="margin-bottom-10 text-center">Add Supplier - Ingredient </h2>
-            <form action="AdminAddSupplier" name="add-supplier" class="cakes-login-form" method="POST">
+            <h2 class="margin-bottom-10 text-center">Add Supplier - Tool</h2>
+            <form action="AdminAddSupplierTool" name="add-supplier" class="cakes-login-form" method="POST">
               <div class="row form-group">
-               <div class="col-lg-6 col-md-6 form-group">                  
-                    <label>Supplier Id</label>
+                <div class="col-lg-6 col-md-6 form-group">                  
+                    <label>Tool Supplier Id</label>
                     <input type="text" class="form-control" id="supId" name="supId"  placeholder="supId" > 
-                                           
+                                      
                 </div>
                 <div class="col-lg-6 col-md-6 form-group">                  
-                    <label>Supplier Name</label>
+                    <label>Tool Supplier Name</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="name" >  
-
+                                       
                 </div> 
      
                
@@ -78,10 +78,13 @@
         </div>                                
                 </div> 
                 
-                
                  <div class="col-lg-6 col-md-6 form-group">                  
                     <label>Delivery</label>
                     <input type="text" class="form-control" id="delivery" name="delivery"  placeholder="delivery">                  
+                </div> 
+                 <div class="col-lg-6 col-md-6 form-group">                  
+                    <label>Minimum Order Quantity</label>
+                    <input type="text" class="form-control" id="minOrderQty" name="minOrderQty"  placeholder="minOrderQtys">                  
                 </div> 
                 
               </div>
@@ -92,17 +95,18 @@
                 <button type="submit"class="cakes-blue-button" onclick="return validate()">Add</button>
                 <button type="submit" class="cakes-blue-button" onclick="setValue()" >Demo</button>
               </div>   
-            </form>   
+            </form>  
             <script>
 				function setValue() {
-					document.getElementById("supId").value = '55';
-					document.getElementById('name').value = 'Pettah Essence Suppliers';
+					document.getElementById("supId").value = '33';
+					document.getElementById('name').value = 'Cake Tools House';
 					document.getElementById('location').value = 'Colombo 01';
-					document.getElementById('email').value = 'PettahEssence@gmail.com';
-					document.getElementById('phone').value = '0112326235';
+					document.getElementById('email').value = 'CakeToolsHouse@gmail.com';
+					document.getElementById('phone').value = '0756537487';
 					document.getElementById('delivery').value = 'yes';
+					document.getElementById('minOrderQty').value = '10';
 				}
-			</script>                         
+			</script>                                  
           </div>
         </div>
 	  </div>
