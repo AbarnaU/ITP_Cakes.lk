@@ -5,22 +5,22 @@ function validate(){
 	 var qty = document.forms["add-cake"][ "qty"].value;
 	 var price = document.forms["add-cake"][ "price"].value;
 	 var description = document.forms["add-cake"][ "description"].value;
-
+	 
 
 	if(is_cid(cid))
 	    	if(is_qty(qty))
 				if(is_price(price))
 					if(is_description(description))
-    					return true;
-				    else
-				   		return false;
-					else
-			        	return false;
-					else
-						return false;
-					else
-						return false;
-	
+    						return true;
+				    	else
+				   			return false;
+						else
+			        		return false;
+						else
+							return false;
+						else
+							return false;
+						
 }
 
 function isEmpty(elemValue,field){
