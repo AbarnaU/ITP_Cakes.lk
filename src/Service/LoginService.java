@@ -13,7 +13,7 @@ public class LoginService {
 		try {
 			Connection con = DbConnection.getDBConnection();  	
 			Statement st = con.createStatement();
-			ResultSet result = st.executeQuery("SELECT uname,pass FROM user WHERE uname='"+log.getUsername()+"' AND pass='"+log.getPassword()+"'");
+			ResultSet result = st.executeQuery("SELECT username,pass FROM user WHERE username='"+log.getUsername()+"' AND pass='"+log.getPassword()+"'");
 			
 			
 

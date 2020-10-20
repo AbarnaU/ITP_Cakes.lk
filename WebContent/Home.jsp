@@ -33,7 +33,7 @@
 								<li class="active"><a href="Home.jsp">Home</a></li>
 								<li><a href="H_Cakes.jsp">Cakes</a></li>
 								<li><a href="CustomizeCakeView.jsp">Customize Cakes</a></li>
-								<li><a href="#">My Profile</a></li>
+								<li><a href="UserProfile.jsp">My Profile</a></li>
 								<li><a href="CustomerViewCakeOrder.jsp">My Orders</a></li>
 								<li><a href="">Feedback</a></li>
 								<li>

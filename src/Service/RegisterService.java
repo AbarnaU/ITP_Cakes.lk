@@ -13,7 +13,7 @@ public class RegisterService {
 			try {
 				Connection con = DbConnection.getDBConnection();  	
 				Statement st = con.createStatement();
-				int i = st.executeUpdate("INSERT INTO user(uname,email,pass,address,phone) VALUES('"+reg.getUsername()+"','"+reg.getEmail()+"','"+reg.getPassword()+"','"+reg.getAddress()+"','"+reg.getCnumber()+"')");
+				int i = st.executeUpdate("INSERT INTO user(username,email,pass,address,phone) VALUES('"+reg.getUsername()+"','"+reg.getEmail()+"','"+reg.getPassword()+"','"+reg.getAddress()+"','"+reg.getCnumber()+"')");
 	
 				if(i>0) {
 					return true;
