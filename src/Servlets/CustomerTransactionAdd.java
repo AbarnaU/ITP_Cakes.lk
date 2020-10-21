@@ -61,7 +61,7 @@ public class CustomerTransactionAdd extends HttpServlet {
 			response.sendRedirect("Payment.jsp"); 
 		}
 	else {
-		response.sendRedirect("Delivery.jsp");
+		response.sendRedirect("PaymentMethodConfirmation.jsp");
 		}
 }	
 

@@ -35,7 +35,7 @@
 								<li><a href="CustomizeCakeView.jsp">Customize Cakes</a></li>
 								<li><a href="UserProfile.jsp">My Profile</a></li>
 								<li><a href="CustomerViewCakeOrder.jsp">My Orders</a></li>
-								<li><a href="">Feedback</a></li>
+								<li><a href="CustomerFeedback.jsp">Feedback</a></li>
 								<li>
 									<%
 										if (session != null) {

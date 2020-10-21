@@ -1,11 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="java.sql.*" %>
+    <%@ page import="java.sql.*" %>
 <%@ page import="Connection.DbConnection"%>
 <%String id=request.getParameter("id"); %>
 <!DOCTYPE html>
-<html lang="en">
-    
+<html>
 <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,7 +23,7 @@
     </head>
     <body>
         
-		<header class="main_header_area">
+        <header class="main_header_area">
 			<div class="main_menu_two">
 				<div class="container">
 					<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -33,10 +32,10 @@
 							<ul class="navbar-nav justify-content-end">
 								<li><a href="Home.jsp">Home</a></li>
 								<li><a href="H_Cakes.jsp">Cakes</a></li>
-								<li><a href="CustomizeCakeView.jsp">Customize Cakes</a></li>
+								<li><a href="#">Customize Cakes</a></li>
 								<li><a href="#">My Profile</a></li>
 								<li class="active"><a href="CustomerViewCakeOrder.jsp">My Orders</a></li>
-								<li><a href="">Feedback</a></li>
+								<li><a href="CustomerFeedback.jsp">Feedback</a></li>
 								<li>
 									<%
 										if (session != null) {
@@ -63,78 +62,76 @@
 				</div>
 			</div>
 		</header>
-        
-        <section class="cart_table_area p_100">
-        	<div class="container">
-				<div class="table-responsive">
-					<table class="table">
-						<thead>
-							<tr>
-								<th scope="col">Preview</th>
-								<th scope="col">Cake Name</th>
-								<th scope="col">Delivery Date</th>
-								<th scope="col">Address</th>
-								<th scope="col"></th>
-								<th scope="col"></th>
-							</tr>
-						</thead>
-						<tbody>
-							<%
-									try {
-									    
-									String Id = (String) session.getAttribute("Username");
-									    DbConnection db=new DbConnection();
-									     Connection connection = DbConnection.getDBConnection(); 
-									    Statement myStm=connection.createStatement();
-									     if (session != null) {
-									if (session.getAttribute("Username") != null) {
-									    String query = "SELECT * FROM cake c, cake_order o where custname='"+Id+"' and  c.cname=o.cname";
-									 
-									    ResultSet resultSet = myStm.executeQuery(query);
-									
-									    while(resultSet.next()) {
-								%>
-							<tr>
+<body>
+       <section class="billing_details_area">
+            <div class="container">
+                <div class="row justify-content-center">
+                	<div class="col-lg-6">
+               	    	<div class="single_b_title">
+               	    		<h2>Delivery Details</h2>
+               	    	</div>
+               	   
+                		<div class="billing_form_area">
+                			<form class="billing_form row justify-content-center" action="DeliveryEdit" method="post">
+                				 <%
+
+										try{
+												Connection con = DbConnection.getDBConnection(); 
+								 		        Statement myStm= con.createStatement();
+								 		       	String query  ="SELECT * FROM delivery WHERE did='"+id+"'";
 							
-								<td>
-								
-									<img class="image" src="img/cake-feature/<%=resultSet.getString("img") %>" alt="">
-									 
-								</td>
-								
+							    				ResultSet  resultSet = myStm.executeQuery(query);
+							    
+							      			while(resultSet.next()){
+						    	      	  
+									%>
+														
+								<div class="none">
+								    <label>Delivery Id</label>
+									<input class="form-control" id="did" name="did" value="<%=resultSet.getString("did")%>">
+								</div>
+								<div class="form-group col-md-6">
+								    <label>Customer Name</label>
+									<input type="text" class="form-control" id="fname" name="fname" value="<%=resultSet.getString("fname")%>">
+								</div>
+								<div class="form-group col-md-6">
+								    <label for="last">Address</label>
+									<input type="text" class="form-control" id="address" name="address" value="<%=resultSet.getString("address")%>">
+								</div>
+								<div class="form-group col-md-6">
+								    <label>City</label>
+									<input type="text" class="form-control" id="city" name="city" value="<%=resultSet.getString("city")%>">
+								</div>
+								<div class="form-group col-md-6">
+								    <label>Phone Number</label>
+									<input type="text" class="form-control" id="pnumber" name="pnumber" value="<%=resultSet.getString("p_number")%>">
+								</div>
 							
-												<td><%=resultSet.getString("cname") %></td>
-												<td><%=resultSet.getString("odate") %></td>
-												<td><%=resultSet.getString("address") %></td>
-												<td><a href="CustomerEditCakeOrder.jsp?id=<%=resultSet.getString("cake_oid")%>">Edit</a></td>   
-												<td><a href="CustomerCancelCakeOrder?id=<%=resultSet.getString("cake_oid")%>" class="templatemo-edit-btn">Delete</a></td> 
-								                                                                                                
+								<% 
+													}
+									      
+									      			con.close();
+									      
+												} 
+												
+												catch (Exception e) {
+													e.printStackTrace();
+												}
+									%> 
 								
-							</tr>
-							<%
-			                            }}}
-			                             connection.close();
-			                        } catch (Exception e) {
-			                            e.printStackTrace();
-			                        }
-			                    %>
-							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td>
-									<a class="pest_btn" href="PaymentView.jsp">Checkout</a>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-        	</div>
+										
+							    <div class="form-group text-center">
+										<button type="submit" value="submit" class="btn pest_btn2">Update Delivery</button>
+								</div>	
+											
+							</form>	
+		  							
+                		</div>
+                	</div>
+                </div>
+              </div>
         </section>
-                       
-     <footer class="footer_area">
+        <footer class="footer_area">
         	<div class="footer_widgets">
         		<div class="container">
         			<div class="row footer_wd_inner">
@@ -169,7 +166,5 @@
         		</div>
         	</div>
         </footer>
-       
-    </body>
-
+</body>
 </html>

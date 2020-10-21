@@ -1,30 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="java.sql.*" %>
+            <%@ page import="java.sql.*" %>
 <%@ page import="Connection.DbConnection"%>
 <%String id=request.getParameter("id"); %>
 <!DOCTYPE html>
-<html lang="en">
-    
+<html>
 <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <link rel="icon" href="img/fav-icon.png" type="image/x-icon" />
-        <title>Cakes.lk</title>
+        <title>Feedback</title>
 
-        <!-- Icon css link -->
+    <!-- Icon css link -->
         <link href="vendors/flat-icon/flaticon.css" rel="stylesheet">
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
         <link href="css/responsive.css" rel="stylesheet">
-		    
-    </head>
-    <body>
         
-		<header class="main_header_area">
+        
+
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<link href="css/feedback.css" rel="stylesheet">
+</head>
+<body>
+<header class="main_header_area">
 			<div class="main_menu_two">
 				<div class="container">
 					<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -33,10 +35,10 @@
 							<ul class="navbar-nav justify-content-end">
 								<li><a href="Home.jsp">Home</a></li>
 								<li><a href="H_Cakes.jsp">Cakes</a></li>
-								<li><a href="CustomizeCakeView.jsp">Customize Cakes</a></li>
+								<li><a href="#">Customize Cakes</a></li>
 								<li><a href="#">My Profile</a></li>
-								<li class="active"><a href="CustomerViewCakeOrder.jsp">My Orders</a></li>
-								<li><a href="">Feedback</a></li>
+								<li><a href="CustomerViewCakeOrder.jsp">My Orders</a></li>
+								<li class="active"><a href="CustomerFeedback.jsp">Feedback</a></li>
 								<li>
 									<%
 										if (session != null) {
@@ -63,78 +65,80 @@
 				</div>
 			</div>
 		</header>
+		
+		
+        	
+        		 <section class="billing_details_area">
+            <div class="container">
+                <div class="row justify-content-center">
+                	<div class="col-lg-12">
+               	    	<div class="single_b_title">
         
-        <section class="cart_table_area p_100">
-        	<div class="container">
-				<div class="table-responsive">
-					<table class="table">
-						<thead>
-							<tr>
-								<th scope="col">Preview</th>
-								<th scope="col">Cake Name</th>
-								<th scope="col">Delivery Date</th>
-								<th scope="col">Address</th>
-								<th scope="col"></th>
-								<th scope="col"></th>
-							</tr>
-						</thead>
-						<tbody>
-							<%
+            <h2>Feedback</h2>
+           
+            <p>We will be happy if you say something about our service</p>
+            </div>
+            
+            <div class="row justify-content-center">
+            
+			
+			
+            <form action="CustomerFeedback" method ="post" class="col-lg-6 go-right">
+            <div class="form-group">
+            <input id="name" name="name" type="text" class="form-control" required>
+            <label for="name">Your Name</label>
+        </div>
+          <%
 									try {
 									    
 									String Id = (String) session.getAttribute("Username");
 									    DbConnection db=new DbConnection();
-									     Connection connection = DbConnection.getDBConnection(); 
+									     Connection connection = db.getDBConnection();
 									    Statement myStm=connection.createStatement();
-									     if (session != null) {
+								     if (session != null) {
 									if (session.getAttribute("Username") != null) {
-									    String query = "SELECT * FROM cake c, cake_order o where custname='"+Id+"' and  c.cname=o.cname";
-									 
+									    String query = "SELECT username FROM user where username='"+Id+"'";
 									    ResultSet resultSet = myStm.executeQuery(query);
 									
-									    while(resultSet.next()) {
-								%>
-							<tr>
-							
-								<td>
-								
-									<img class="image" src="img/cake-feature/<%=resultSet.getString("img") %>" alt="">
-									 
-								</td>
-								
-							
-												<td><%=resultSet.getString("cname") %></td>
-												<td><%=resultSet.getString("odate") %></td>
-												<td><%=resultSet.getString("address") %></td>
-												<td><a href="CustomerEditCakeOrder.jsp?id=<%=resultSet.getString("cake_oid")%>">Edit</a></td>   
-												<td><a href="CustomerCancelCakeOrder?id=<%=resultSet.getString("cake_oid")%>" class="templatemo-edit-btn">Delete</a></td> 
-								                                                                                                
-								
-							</tr>
-							<%
-			                            }}}
-			                             connection.close();
-			                        } catch (Exception e) {
-			                            e.printStackTrace();
-			                        }
-			                    %>
-							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td>
-									<a class="pest_btn" href="PaymentView.jsp">Checkout</a>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-        	</div>
-        </section>
-                       
-     <footer class="footer_area">
+									
+									    while (resultSet.next()) {
+								%> 
+	 								<div class="none">
+								    <label for="last">Customer Name</label>
+									<input type="text" class="form-control" id="custname" name="custname" value="<%=resultSet.getString("username") %> ">
+								</div>
+								 <%
+		                            }}}
+		                             connection.close();
+		                        } catch (Exception e) {
+		                            e.printStackTrace();
+		                        }
+		                    %>
+        <div class="form-group">
+            <input id="email" name="email" type="email" class="form-control" required>
+            <label for="email">Email </label>
+        </div>
+        <div class="form-group">
+            <input id="pnumber" name="pnumber" class="form-control" required>
+            <label for="pnumber">Phone Number</label>
+        </div>
+        <div class="form-group">
+            <textarea id="message" name="message" class="form-control" style="height: 150px" required></textarea>
+            <label for="message">Message</label>
+        </div>
+        <div class="form-group text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        </form>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    
+
+
+<footer class="footer_area">
         	<div class="footer_widgets">
         		<div class="container">
         			<div class="row footer_wd_inner">
@@ -159,7 +163,7 @@
         					<aside class="f_widget f_contact_widget">
         						<div class="f_title">
         							<h3>Contact Info</h3>
-        						</div>
+        			        			</div>
         						<h4>+94 771234567</h4>
         						<p>45B, Galle Road<br />Wellawatte, Colombo</p>
         						<h5>info@cakes.lk</h5>
@@ -169,7 +173,5 @@
         		</div>
         	</div>
         </footer>
-       
-    </body>
-
+</body>
 </html>
