@@ -46,7 +46,7 @@ public class CustomerTransactionAdd extends HttpServlet {
 		
 		
 		Transaction transaction = new Transaction();
-		transaction.setCustame(custname);
+		transaction.setCustname(custname);
 		transaction.setCake_oid(cake_oid);
 		transaction.setCname(cname);
 		transaction.setPrice(price);
@@ -61,7 +61,7 @@ public class CustomerTransactionAdd extends HttpServlet {
 			response.sendRedirect("Payment.jsp"); 
 		}
 	else {
-		response.sendRedirect("Delivery.jsp");
+		response.sendRedirect("PaymentMethodConfirmation.jsp");
 		}
 }	
 

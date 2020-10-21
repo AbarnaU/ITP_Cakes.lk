@@ -2,27 +2,27 @@ package Entities;
 
 public class Account {
 	
-	private double total;
-	private double ptotal;
-	private double totalPrice;
+	private String totals;
+	private String ptotal;
+	private String totalPrice;
 	private String app;
 	
-	public double getTotal() {
-		return total;
+	public String getTotals() {
+		return totals;
 	}
-	public void setTotal(double total) {
-		this.total = total;
+	public void setTotals(String totals) {
+		this.totals = totals;
 	}
-	public double getPtotal() {
+	public String getPtotal() {
 		return ptotal;
 	}
-	public void setPtotal(double ptotal) {
+	public void setPtotal(String ptotal) {
 		this.ptotal = ptotal;
 	}
-	public double getTotalPrice() {
+	public String getTotalPrice() {
 		return totalPrice;
 	}
-	public void setTotalPrice(double totalPrice) {
+	public void setTotalPrice(String totalPrice) {
 		this.totalPrice = totalPrice;
 	}
 	public String getApp() {

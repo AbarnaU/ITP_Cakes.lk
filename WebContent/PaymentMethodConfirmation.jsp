@@ -35,7 +35,7 @@
 								<li class="active"><a href="CustomerViewCakeOrder.jsp">My Orders</a></li>
 								<li><a href="CustomerFeedback.jsp">Feedback</a></li>
 								<li>
-									<%
+								<%
 										if (session != null) {
 											if (session.getAttribute("Username") != null) {
 												String name = (String) session.getAttribute("Username");
@@ -67,8 +67,8 @@
 					<table class="table">
 						<thead>
 							<tr>
-							<th scope="col">Name</th>
-								<th scope="col">Ordered ID</th>
+								<th scope="col">Customer Name</th>
+								<th scope="col">Order ID</th>
 								<th scope="col">Cake Name</th>
 								<th scope="col">Price</th>
 								<th scope="col">Payment Method</th>
@@ -79,13 +79,13 @@
 						<%
 									try {
 									    
-										String Id = (String) session.getAttribute("Username");
+									String Id = (String) session.getAttribute("Username");
 									    DbConnection db=new DbConnection();
 									     Connection connection = DbConnection.getDBConnection(); 
 									    Statement myStm=connection.createStatement();
 									     if (session != null) {
-									    	 if (session.getAttribute("Username") != null) {
-									    		 String query = "SELECT * FROM transaction ";
+									if (session.getAttribute("Username") != null) {
+									    String query = "SELECT * FROM transaction where custname='"+Id+"'";
 									 
 									    ResultSet resultSet = myStm.executeQuery(query);
 									

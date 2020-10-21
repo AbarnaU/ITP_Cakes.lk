@@ -107,7 +107,7 @@
           </div> 
           
 	        <div class="form-group text-center">
-	          <button onclick="window.location.href=''" class="cakes-blue-button"  >Report Generate</button>
+	          <button onclick="window.location.href='PaymentReportGenerate.jsp'" class="cakes-blue-button"  >Report Generate</button>
 	        </div> 
         </div>
       </div>

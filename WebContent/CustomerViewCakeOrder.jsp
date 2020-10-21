@@ -125,7 +125,7 @@
 								<td></td>
 								<td></td>
 								<td>
-									<a class="pest_btn" href="Payment.jsp">Checkout</a>
+									<a class="pest_btn" href="PaymentView.jsp">Checkout</a>
 								</td>
 							</tr>
 						</tbody>

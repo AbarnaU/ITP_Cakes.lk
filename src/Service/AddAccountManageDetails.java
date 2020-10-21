@@ -11,7 +11,7 @@ public class AddAccountManageDetails {
 		try {
 			Connection con = DbConnection.getDBConnection();  	
 			Statement st = con.createStatement();
-			int i = st.executeUpdate("INSERT INTO account(TSales, TTransaction, NBalance, Apparent) Values('"+acc.getTotal()+"','"+acc.getPtotal()+"','"+acc.getTotalPrice()+"','"+acc.getApp()+"')");
+			int i = st.executeUpdate("INSERT INTO account(TSales, TTransaction, NBalance, Apparent) Values('"+acc.getTotals()+"','"+acc.getPtotal()+"','"+acc.getTotalPrice()+"','"+acc.getApp()+"')");
 			
 			if(i>0) {
 				return true;

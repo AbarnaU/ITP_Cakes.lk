@@ -92,7 +92,7 @@
 									    Statement myStm=connection.createStatement();
 									     if (session != null) {
 									if (session.getAttribute("Username") != null) {
-									    String query = "SELECT * FROM user where uname='"+Id+"'";
+									    String query = "SELECT * FROM user where username='"+Id+"'";
 									    ResultSet resultSet = myStm.executeQuery(query);
 									
 									
@@ -104,7 +104,7 @@
 								</div>
 								<div class="none">
 								    <label for="last">Customer Name</label>
-									<input type="text" class="form-control" id="custname" name="custname" value="<%=resultSet.getString("uname") %>">
+									<input type="text" class="form-control" id="custname" name="custname" value="<%=resultSet.getString("username") %>">
 								</div>
 								<div class="form-group col-md-6">
 								    <label>Email</label>

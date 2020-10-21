@@ -3,7 +3,7 @@ package Entities;
 public class Transaction {
 	String tid;
 	
-	String custame;
+	String custname;
 	String cake_oid;
 	String cname;
 	String price;
@@ -16,11 +16,11 @@ public class Transaction {
 	public void setTid(String tid) {
 		this.tid = tid;
 	}
-	public String getCustame() {
-		return custame;
+	public String getCustname() {
+		return custname;
 	}
-	public void setCustame(String custame) {
-		this.custame = custame;
+	public void setCustname(String custname) {
+		this.custname = custname;
 	}
 	public String getCake_oid() {
 		return cake_oid;

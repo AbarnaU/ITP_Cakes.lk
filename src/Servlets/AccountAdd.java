@@ -35,13 +35,13 @@ public class AccountAdd extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		double total = Double.parseDouble(request.getParameter("total"));
-		double ptotal = Double.parseDouble( request.getParameter("ptotal"));
-		double totalPrice = Double. parseDouble( request.getParameter("totalPrice"));
+		String totals =request.getParameter("totals");
+		String ptotal =  request.getParameter("ptotal");
+		String totalPrice =  request.getParameter("totalPrice");
 		String app = request.getParameter("app");
 		
 		Account acc = new Account();
-		acc.setTotal(total);
+		acc.setTotals(totals);
 		acc.setPtotal(ptotal);
 		acc.setTotalPrice(totalPrice);
 		acc.setApp(app);
