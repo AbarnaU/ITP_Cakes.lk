@@ -1,18 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="java.sql.*" %>
+    <%@ page import="java.sql.*" %>
 <%@ page import="Connection.DbConnection"%>
 <%String id=request.getParameter("id"); %>
 <!DOCTYPE html>
-<html lang="en">
-    
+<html>
 <head>
-        <meta charset="utf-8">
+   <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <link rel="icon" href="img/fav-icon.png" type="image/x-icon" />
-        <title>Cakes.lk</title>
+        <title>Payment Method Confirmation</title>
 
         <!-- Icon css link -->
         <link href="vendors/flat-icon/flaticon.css" rel="stylesheet">
@@ -20,10 +19,8 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
         <link href="css/responsive.css" rel="stylesheet">
-		    
-    </head>
-    <body>
-        
+</head>
+<body>
 		<header class="main_header_area">
 			<div class="main_menu_two">
 				<div class="container">
@@ -33,10 +30,10 @@
 							<ul class="navbar-nav justify-content-end">
 								<li><a href="Home.jsp">Home</a></li>
 								<li><a href="H_Cakes.jsp">Cakes</a></li>
-								<li><a href="CustomizeCakeView.jsp">Customize Cakes</a></li>
+								<li><a href="#">Customize Cakes</a></li>
 								<li><a href="#">My Profile</a></li>
 								<li class="active"><a href="CustomerViewCakeOrder.jsp">My Orders</a></li>
-								<li><a href="">Feedback</a></li>
+								<li><a href="CustomerFeedback.jsp">Feedback</a></li>
 								<li>
 									<%
 										if (session != null) {
@@ -63,78 +60,72 @@
 				</div>
 			</div>
 		</header>
-        
-        <section class="cart_table_area p_100">
+
+<section class="cart_table_area p_100">
         	<div class="container">
 				<div class="table-responsive">
 					<table class="table">
 						<thead>
 							<tr>
-								<th scope="col">Preview</th>
+							<th scope="col">Name</th>
+								<th scope="col">Ordered ID</th>
 								<th scope="col">Cake Name</th>
-								<th scope="col">Delivery Date</th>
-								<th scope="col">Address</th>
-								<th scope="col"></th>
+								<th scope="col">Price</th>
+								<th scope="col">Payment Method</th>
 								<th scope="col"></th>
 							</tr>
 						</thead>
 						<tbody>
-							<%
+						<%
 									try {
 									    
-									String Id = (String) session.getAttribute("Username");
+										String Id = (String) session.getAttribute("Username");
 									    DbConnection db=new DbConnection();
 									     Connection connection = DbConnection.getDBConnection(); 
 									    Statement myStm=connection.createStatement();
 									     if (session != null) {
-									if (session.getAttribute("Username") != null) {
-									    String query = "SELECT * FROM cake c, cake_order o where custname='"+Id+"' and  c.cname=o.cname";
+									    	 if (session.getAttribute("Username") != null) {
+									    		 String query = "SELECT * FROM transaction ";
 									 
 									    ResultSet resultSet = myStm.executeQuery(query);
 									
 									    while(resultSet.next()) {
 								%>
-							<tr>
-							
-								<td>
-								
-									<img class="image" src="img/cake-feature/<%=resultSet.getString("img") %>" alt="">
-									 
-								</td>
-								
-							
+								<tr>
+												<td><%=resultSet.getString("custname") %></td>
+												<td><%=resultSet.getString("cake_oid") %></td>
 												<td><%=resultSet.getString("cname") %></td>
-												<td><%=resultSet.getString("odate") %></td>
-												<td><%=resultSet.getString("address") %></td>
-												<td><a href="CustomerEditCakeOrder.jsp?id=<%=resultSet.getString("cake_oid")%>">Edit</a></td>   
-												<td><a href="CustomerCancelCakeOrder?id=<%=resultSet.getString("cake_oid")%>" class="templatemo-edit-btn">Delete</a></td> 
+												<td><%=resultSet.getString("price") %></td>										
+												<td><%=resultSet.getString("payment_method")%></td>   
+												<td><a href="CustomerPaymentDelete?id=<%=resultSet.getString("tid")%>" class="templatemo-edit-btn"> Delete </a></td> 
 								                                                                                                
 								
 							</tr>
 							<%
-			                            }}}
+									    }}}
 			                             connection.close();
 			                        } catch (Exception e) {
 			                            e.printStackTrace();
 			                        }
 			                    %>
 							<tr>
+					<tr>
 								<td></td>
 								<td></td>
 								<td></td>
 								<td></td>
 								<td></td>
 								<td>
-									<a class="pest_btn" href="Payment.jsp">Checkout</a>
+									<a class="pest_btn" href="Delivery.jsp">Confirm</a>
 								</td>
 							</tr>
-						</tbody>
+							</tbody>
 					</table>
 				</div>
         	</div>
         </section>
-                       
-     <footer class="footer_area">
+       
+             <footer class="footer_area">
         	<div class="footer_widgets">
         		<div class="container">
         			<div class="row footer_wd_inner">
@@ -169,7 +160,5 @@
         		</div>
         	</div>
         </footer>
-       
-    </body>
-
+</body>
 </html>

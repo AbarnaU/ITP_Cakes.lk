@@ -1,0 +1,291 @@
+/* Body */
+
+body {
+	margin: 0px 0px;
+	background-color: #fdf6c5 ;
+}
+
+/* In Customer Main page Slide show */
+
+input[type=text] {
+            width: 130px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+            background-image: url('searchicon.png');
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px;
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+        }
+
+        input[type=text]:focus {
+            width: 100%;
+        }
+        
+        
+
+.Box
+{
+    position: absolute;
+    top:70%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:420px;
+    height: 420px;
+    box-sizing: border-box;
+    border-radius:20px ;
+    background: rgba(0,0,0,.6);
+    text-color:red;
+}
+
+table
+{
+    font-weight: bold;
+    color: black;
+}
+
+.count{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+/* Employee main & Admin main table */
+
+.col-md
+{
+    min-height: 1px;
+    width: 340px;
+	height:350px;
+    padding-bottom: 50px;
+}
+
+.tab-ul
+{
+	list-style-type:disc;
+	color:black;
+	padding-top: 15px;
+	padding-right: 50px;
+	padding-left: 80px;
+	text-align:left;
+		
+}
+.white-panel
+{
+    text-align: center;
+    background: #ffffff;
+    color: #ccd1d9;
+}
+
+.pn
+{
+    height: 350px;
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.white-panel .white-header
+{
+    background: #f4f4f4;
+    padding: 3px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    color: #c6c6c6;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+img {
+    vertical-align: middle;
+}
+
+img {
+    border: 0;
+}
+img.logo{
+	margin-top: 90px;
+    margin-bottom: -40px;
+}
+
+
+#img{
+			width:100px;
+			height:100px;		
+		
+	}
+	
+#imgs{
+			width:30px;
+			height:30px;
+}
+	
+/* Navigation bar */
+
+a.nav, a.current {
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: "Calibri";
+	font-size: 18px;
+	font-weight: bolder;
+	padding: 0px 30px;
+	-webkit-transition: all 350ms ease;
+	-moz-transition: all 350ms ease;
+	transition: all 350ms ease;
+}
+
+
+
+a.nav:hover {
+    color: #479DF4;
+    -webkit-transition: all 350ms ease;
+	-moz-transition: all 350ms ease;
+	transition: all 350ms ease;
+}
+
+a.nav:active {
+    color: #479DF4;
+}
+
+.nav a.current{
+	color: #479DF4;
+}
+
+hr.after_nav {
+	position: relative;
+	top: -10px;
+	border: none;
+	border-top: 1px solid #bababa;
+}
+
+nav ul {
+		  margin: 0;
+		  padding: 0;
+		  list-style: none;
+		  position: relative;
+		  float: right;
+		}
+		
+
+		
+		#login label input {
+		  position: relative;
+		  top: 2px;
+		  right: 2px;
+		}
+		
+		#login div.login {
+		  text-align: center;
+		  position: absolute;
+		  right: 0px;
+		  width: 275px;
+		  padding-top: 35px;
+		}
+
+
+
+
+
+
+
+
+
+/* For Tables in Report */
+
+#customers {
+    font-family: Comic Sans MS;
+    border-collapse: collapse;
+    width: 60%;
+}
+
+#customers td, #customers th {
+    border: 0;
+    padding: 8px;
+    text-align: center;
+    font-family: Comic Sans MS;
+    font-size: 15px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #123524;
+    color: white;
+    font-family: Comic Sans MS;
+    font-size: 15px;
+}
+
+.qlist {
+    font-family: Comic Sans MS;
+    border-collapse: collapse;
+    width: 50%;
+}
+
+.qlist td, .qlist th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.qlist tr:nth-child(even){background-color: #f2f2f2;}
+
+.qlist tr:hover {background-color: #ddd;}
+
+.qlist th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+}
+
+..packages{
+	display: flex;
+}
+/* Button */
+
+.button{
+    border: none;
+    outline: 0;
+    display: block;
+    padding: 8px;
+    color: white;
+    background-color: #347235;
+    text-align: center;
+    cursor: pointer;
+    width: 20%;
+    font-family: Comic Sans MS;
+	  
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.button:hover{
+    background-color: #555;
+}
+
+
+
+
+
+/* Form in Addshift */
+		
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}		
