@@ -72,7 +72,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/jquery.payform.min.js"></script>
     <script src="js/card.js"></script>
-    <script src="js/card validation.js"></script>
+    <script src="js/cardempty.js"></script>
     
     <div class="creditCardForm">
     <div class="heading">
@@ -87,7 +87,7 @@
         
         <script>
 				function setValue() {
-					document.getElementById("holder").value = 'Hariscumar';
+					document.getElementById('holder').value = 'Hariscumar';
 					document.getElementById('cvv').value = '396';
 					document.getElementById('cardNumber').value = '4605 5940 0204 5329';
 					document.getElementById('01').value = 'January';
@@ -142,7 +142,7 @@
           
              
 			<div class="form-group text-center">
-                <button type="submit"class="pest_btn" >PAY</button>
+                <button type="submit"class="pest_btn" onclick="return validation()" >PAY</button>
               </div> 
              						
    				</form>	

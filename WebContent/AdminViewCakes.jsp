@@ -31,7 +31,7 @@
             <li><a href="AdminViewCakes.jsp" class="active"><i class="fa fa-sliders fa-fw"></i>Cakes</a></li>
             <li><a href=""><i class="fa fa-sliders fa-fw"></i>Designing Cakes</a></li>
             <li><a href="AdminViewCustomerOrderedCake.jsp"><i class="fa fa-sliders fa-fw"></i>Cake Orders</a></li>
-            <li><a href="AccountManagement.jsp"><i class="fa fa-sliders fa-fw"></i>Account</a></li>
+            <li><a href="AccountManage.jsp"><i class="fa fa-sliders fa-fw"></i>Account</a></li>
             <li><a href=""><i class="fa fa-sliders fa-fw"></i>Delivery</a></li>
             <li><a href="AdminViewPayment.jsp"><i class="fa fa-sliders fa-fw"></i>Payment</a></li>
             <li><a href=""><i class="fa fa-sliders fa-fw"></i>Feedback</a></li>          

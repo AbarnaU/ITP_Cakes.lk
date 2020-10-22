@@ -19,9 +19,10 @@
         <link href="css/style.css" rel="stylesheet">
         <link href="css/responsive.css" rel="stylesheet">
         <link href="css/summary.css" rel="stylesheet">
+        <script src="js/delivery.js"></script>
 <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
 </head>
 <body>
 
@@ -65,6 +66,8 @@
 			</div>
 		</header>
 		
+
+		
 <div class="container wrapper">
 <div class="row cart-body">
 
@@ -81,7 +84,7 @@
 					
 				}
 			</script>
-                <form class="form-horizontal" method="post" action="CustomerDeliveryAdd">
+                <form class="form-horizontal" name="delivery" method="post" action="CustomerDeliveryAdd" >
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
                     <!--REVIEW ORDER-->
                     <div class="panel panel-info">
@@ -149,11 +152,9 @@
                           <div class="form-group">
                                 <div class="col-md-12"><strong>Full Name:</strong></div>
                                 <div class="col-md-12">
-                                    <input type="text" name="fname" class="form-control" value="" id="fname" />
+                                    <input type="text" name="fname" class="form-control" placeholder="Full Name" id="fname" required  >
                                 </div>
-                            </div>
-           
-
+                            </div>          
          <%
 									try {
 									    
@@ -163,7 +164,7 @@
 									    Statement myStm=connection.createStatement();
 								     if (session != null) {
 									if (session.getAttribute("Username") != null) {
-									    String query = "SELECT username FROM user where username='"+Id+"'";
+									    String query = "SELECT username FROM user where username = '"+Id+"' ";
 									    ResultSet resultSet = myStm.executeQuery(query);
 									
 									
@@ -171,7 +172,7 @@
 								%> 
 	 								<div class="none">
 								    <label for="last">Customer Name</label>
-									<input type="text" class="form-control" id="custname" name="custname" value="<%=resultSet.getString("userame") %> ">
+									<input type="text" class="form-control" id="custname" name="custname" value="<%=resultSet.getString("username") %> ">
 								</div>
 								 <%
 		                            }}}
@@ -182,19 +183,17 @@
 		                    %>
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Address:</strong></div>
-                                <div class="col-md-12">
-                                    <input type="text" name="address" class="form-control" value="" id="address" />
-                                </div>
+                                <div class="col-md-12"><input type="text" name="address" class="form-control" placeholder="Address" id="address" required></div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-12"><strong>City:</strong></div>
                                 <div class="col-md-12">
-                                    <input type="text" name="city" class="form-control" value=""  id="city"/>
+                                    <input type="text" name="city" class="form-control" placeholder="City"  id="city" required >
                                 </div>
                             </div>                                                       
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Phone Number:</strong></div>
-                                <div class="col-md-12"><input type="text" name="pnumber" class="form-control" value="" id="pnumber" /></div>
+                                <div class="col-md-12"><input type="text" name="pnumber" class="form-control" placeholder="Phone Number" id="pnumber" required ></div>
                             </div>
                                 </div>
                     </div>
@@ -202,17 +201,13 @@
                     
                     
                 </div>
-                		
-                            			
-                		
-                		
-                					
-                			<div class="container-login100-form-btn m-t-32 logout" align="center">
-						<button class=" pest_btn_logout">
-							Submit
-						</button>
+                		                   
+						<div class="form-group text-center">
+                <button type="submit"class="pest_btn_logout" onclick="return validation()" >Submit</button>
+              </div> 
+              </form>
 						</div>
-						</form>
+						
 						</div>
                 		</div>
 								
